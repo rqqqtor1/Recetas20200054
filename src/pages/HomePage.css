@@ -3,12 +3,16 @@
   margin: 0 auto;
   padding: 2rem 1.5rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
+  flex: 1;
 }
 
 .home-header {
@@ -18,28 +22,47 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 1rem;
+  width: 100%;
+  padding: 0 1rem; /* Añadido para mejor centrado */
 }
 
 .home-header-left {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  justify-content: center; /* Centrado horizontal */
+  flex-wrap: wrap; /* Para responsive */
 }
 
 .home-icon {
   color: #f59e0b;
   flex-shrink: 0;
+  margin-right: 0.5rem; /* Espaciado más consistente */
 }
 
 .home-title {
   margin: 0;
   color: #1e293b;
+  text-align: center; /* Texto centrado */
+  flex: 1; /* Ocupa espacio disponible */
+  min-width: 200px; /* Evita que se rompa muy pequeño */
+}
+
+.header-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .back-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-right: auto; /* Empuja otros elementos a la derecha */
 }
 
 .add-button {
@@ -48,17 +71,24 @@
   gap: 0.5rem;
   background-color: #10b981;
   color: white;
+  padding: 0.75rem 1.5rem; /* Más padding para mejor click */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: all 0.2s ease;
 }
 
 .add-button:hover {
   background-color: #059669;
+  transform: translateY(-1px); /* Efecto sutil al hover */
 }
 
 .recipes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin: 2rem auto; /* Centrado vertical y horizontal */
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 1rem; /* Padding interno para mejor espaciado */
 }
 
 .home-loading {
@@ -70,6 +100,7 @@
   height: 100vh;
   color: #64748b;
   font-size: 1.1rem;
+  margin: 0 auto; /* Centrado perfecto */
 }
 
 .error-message {
@@ -78,6 +109,8 @@
   color: #b91c1c;
   border-radius: 8px;
   border-left: 4px solid #dc2626;
+  max-width: 1100px;
+  margin: 0 auto 2rem; /* Centrado con margen inferior */
 }
 
 .empty-state {
@@ -91,6 +124,9 @@
   background-color: #f8fafc;
   border-radius: 12px;
   border: 1px dashed #cbd5e1;
+  max-width: 800px;
+  margin: 2rem auto; /* Centrado vertical y horizontal */
+  width: 90%; /* Ancho relativo */
 }
 
 .empty-icon {
@@ -118,26 +154,37 @@
   
   .home-header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    align-items: center; /* Centrado en móviles */
+    gap: 1.5rem;
+    text-align: center;
   }
   
   .home-header-left {
+    flex-direction: column;
     gap: 1rem;
+    width: 100%;
   }
   
   .recipes-grid {
     grid-template-columns: 1fr;
+    padding: 0 0.5rem; /* Menos padding en móviles */
   }
   
   .empty-state {
     padding: 2rem 1rem;
+    width: 95%; /* Más ancho en móviles */
+  }
+  
+  .back-button {
+    margin-right: 0; /* Reset para móviles */
+    align-self: flex-start; /* Alineación consistente */
   }
 }
 
 @media (max-width: 480px) {
   .home-title {
     font-size: 1.5rem;
+    width: 100%; /* Ocupa todo el ancho */
   }
   
   .empty-title {
@@ -146,5 +193,10 @@
   
   .empty-icon {
     size: 60px;
+  }
+  
+  .add-button {
+    width: 100%; /* Botón de ancho completo */
+    justify-content: center;
   }
 }
