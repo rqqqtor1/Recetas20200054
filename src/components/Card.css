@@ -1,0 +1,130 @@
+.recipe-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.recipe-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.recipe-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1e293b;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.recipe-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.5rem;
+  min-width: auto;
+}
+
+.recipe-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.recipe-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe-section-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #334155;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recipe-text {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* Estilos para el texto de ingredientes e instrucciones */
+.recipe-section:nth-child(1) .recipe-text {
+  font-style: italic;
+}
+
+.recipe-section:nth-child(2) .recipe-text {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.recipe-section:nth-child(2) .recipe-text::before {
+  content: "•";
+  position: absolute;
+  left: 0.5rem;
+  color: #94a3b8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .recipe-card {
+    border-radius: 8px;
+  }
+  
+  .recipe-card-content {
+    padding: 1.25rem;
+  }
+  
+  .recipe-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-card-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .recipe-actions {
+    align-self: flex-end;
+  }
+  
+  .recipe-section:nth-child(2) .recipe-text {
+    padding-left: 1rem;
+  }
+}

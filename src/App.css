@@ -1,0 +1,135 @@
+/* Reset y estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal - modificado para usar todo el ancho */
+.container {
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estructura de layout completa */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Ajustes para componentes específicos */
+.home-container, .welcome-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Modificación del grid para usar más espacio */
+.recipes-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Header y footer expansivos */
+.header-container, .footer-container {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+/* Modal a pantalla completa en móviles */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+/* Utilidades mejoradas */
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.min-full-height {
+  min-height: 100%;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+/* Ajustes para formularios */
+.form-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+/* Card grid expansivo */
+.card-grid-container {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Media queries para diferentes tamaños */
+@media (min-width: 768px) {
+  .main-content {
+    padding: 1.5rem 2rem;
+  }
+  
+  .recipes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding: 2rem 3rem;
+  }
+  
+  .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
